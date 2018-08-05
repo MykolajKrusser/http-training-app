@@ -8,7 +8,7 @@ class FullPost extends Component {
     }
 
     deletePostHandler = ()=>{
-        axios.delete('/posts' + this.props.id)
+        axios.delete('/posts/' + this.props.id)
             .then(respons=>{
                 console.log(respons)
                 alert("Post was deleted!!")
@@ -18,7 +18,7 @@ class FullPost extends Component {
     componentDidUpdate(){
         if(this.props.id){
             if(!this.state.loadedPostById || (this.state.loadedPostById && this.state.loadedPostById.id !== this.props.id)){
-                axios.get('/posts' + this.props.id)
+                axios.get('/posts/' + this.props.id)
                 .then(respons=>{
                     //console.log(respons.data)
                     this.setState({loadedPostById: respons.data})
