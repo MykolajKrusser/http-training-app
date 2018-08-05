@@ -26,7 +26,7 @@ class Blog extends Component {
         })
         .catch(
             error=>{
-                console.log(error)
+                //console.log(error)
                 this.setState({error: true})
             }
         )
@@ -37,7 +37,7 @@ class Blog extends Component {
     }
 
     render () {
-        let posts = <p style={{textAlign: "center"}}>Somthing goes wrong</p>
+        let posts = <p style={{textAlign: "center", color: "red"}}>Somthing goes wrong</p>
         if(!this.state.error){
             posts = this.state.post.map(post =>{
                 return <Post 
