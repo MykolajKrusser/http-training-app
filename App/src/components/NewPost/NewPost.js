@@ -18,6 +18,8 @@ class NewPost extends Component {
         axios.post("http://jsonplaceholder.typicode.com/posts", data)
             .then(respons =>{
                 console.log(respons)
+                this.setState({title: '', content: ''})
+                alert('Data sent!!')
             })
     }
     render () {
