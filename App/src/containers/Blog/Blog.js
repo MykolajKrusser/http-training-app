@@ -14,8 +14,9 @@ class Blog extends Component {
                         <li><a href="/new-post">New Post</a></li>
                     </ul>
                 </nav>
-                <Route path="/" exact render={()=><h1>Home</h1>}/>
-                <Route path="/"  render={()=><h1>Home22</h1>}/>
+                {/*<Route path="/" exact render={()=><h1>Home</h1>}/>
+                <Route path="/"  render={()=><h1>Home22</h1>}/>*/}
+                <Route path="/" exact component={Posts}/>
             </div>
         );
     }
