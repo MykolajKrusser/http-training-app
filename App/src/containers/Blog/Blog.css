@@ -5,3 +5,35 @@
     width: 80%;
     margin: auto;
 }
+
+.Nav {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+.Nav ul{
+    list-style: none;
+}
+
+.Nav li{
+    margin: 0 15px;
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid brown;
+    transition: color .3s ease-in-out;
+    width: 200px;
+    cursor: pointer;
+}
+
+.Nav li a{
+    text-decoration: none;
+    color: black;
+}
+
+.Nav li a:hover,
+.Nav li a:active {
+    color: brown;
+    transition: color .3s ease-in-out;
+}
