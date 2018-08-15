@@ -20,7 +20,10 @@ class NewPost extends Component {
         axios.post("/posts", data)
             .then(respons =>{
                 console.log(respons)
-                this.setState({title: '', content: '', submited: true})
+                this.setState({title: '', content: ''})
+                // this.setState({submited: true})
+                // this.props.history.replace('/posts')
+                this.props.history.push('/posts')
                 alert('Data sent!!')
             })
     }
