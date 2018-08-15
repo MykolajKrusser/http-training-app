@@ -13,7 +13,7 @@ class Posts extends Component {
     componentDidMount(){
         axios.get('/posts')
         .then(respons => {
-            const posts = respons.data.slice(0, 8)
+            const posts = respons.data.slice(0, 4)
             const updatedPosts = posts.map(post =>{
                 return{
                     ...post, author: 'Nick'
