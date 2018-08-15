@@ -25,7 +25,8 @@
 }
 
 .Nav li a:hover,
-.Nav li a:active {
+.Nav li a:active,
+.Nav li a.myActive {
     color: brown;
     transition: color .3s ease-in-out;
 }
