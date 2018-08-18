@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import Posts from './Posts/Posts';
-import NewPost from './NewPost/NewPost';
-
+//import NewPost from './NewPost/NewPost'; comment it for use asyncComponent
 import './Blog.css';
 import {Route, NavLink, Switch, Redirect} from 'react-router-dom';
 
+
+import asyncComponent from '../../hoc/asyncComponent'; // laze loading of component
+const AsyncNewPost = asyncComponent(()=>{
+    return import('./NewPost/NewPost');
+});
+
 class Blog extends Component {
     state = {
-        auth: false
+        auth: true
     }
     render () {
         return (
@@ -30,11 +35,11 @@ class Blog extends Component {
                 <Route path="/"  render={()=><h1>Home22</h1>}/>*/}
                
                 <Switch>
-                    {this.state.auth ? <Route path="/new-post" component={NewPost}/> : null}
+                    {this.state.auth ? <Route path="/new-post" component={AsyncNewPost}/> : null}
                     <Route path="/posts/" component={Posts}/>
                     {/* <Redirect from='/' to='/posts'/> */}
                     {/* <Route path="/" component={Posts}/> */}
-                    <Route render={()=>(<h1>Page NOT found</h1>)}/> {/*always in the end of route list, does`t work with Redirect*/}
+                    <Route render={()=>(<h1 style={{textAlign: "center", margin: "50px auto"}}>Page NOT found</h1>)}/> {/*always in the end of route list, does`t work with Redirect*/}
                 </Switch>
             </div>
         );
