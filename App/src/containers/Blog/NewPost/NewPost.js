@@ -11,6 +11,9 @@ class NewPost extends Component {
         author: 'Nick',
         submited: false
     }
+    componentDidMount(){
+        // if not auth => {this.props.history.replace('/posts')}
+    }
     postDatahandler = ()=>{
         const data = {
             title: this.state.title,
